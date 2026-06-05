@@ -8,7 +8,7 @@ export default function Hero() {
             {/* 1. IMMERSIVE COMPRESSED CANVAS BACKGROUND GRAPHIC FRAME */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="/back.jpg"
+                    src="/back.png"
                     alt="Luxury Glass Conservatory Dining Hall Layout"
                     className="w-full h-full object-cover filter brightness-[0.55] contrast-[1.02]"
                 />
@@ -87,39 +87,82 @@ export default function Hero() {
 
             </div>
 
-            {/* 4. LOWER BOUND CONTEXT TRUST COUNTER BADGE TRACKER */}
-            <div className="w-full max-w-7xl mx-auto px-12 flex justify-end mt-auto mb-8 relative z-20 pointer-events-none">
-                <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-full p-2 pr-5 flex items-center gap-3 shadow-xl">
-                    {/* Overlapping User Circle Avatars with Real HD Profile Pictures */}
-                    <div className="flex -space-x-2.5 items-center pointer-events-auto">
-                        <img
-                            className="w-7 h-7 rounded-full border-2 border-zinc-950 object-cover shadow-md"
-                            src="https://unsplash.com"
-                            alt="Active Diner Marie"
-                        />
-                        <img
-                            className="w-7 h-7 rounded-full border-2 border-zinc-950 object-cover shadow-md"
-                            src="https://unsplash.com"
-                            alt="Active Diner David"
-                        />
-                        <img
-                            className="w-7 h-7 rounded-full border-2 border-zinc-950 object-cover shadow-md"
-                            src="https://unsplash.com"
-                            alt="Active Diner Elena"
-                        />
-                        <div className="w-7 h-7 rounded-full border-2 border-zinc-950 bg-white text-black font-sans text-[8px] font-extrabold flex items-center justify-center shadow-md select-none">
-                            +1.2k
+            {/* 4. LOWER BOUND CONTEXT TRUST COUNTER & PERFORMANCE CRITERIA BAR */}
+            <div className="w-full max-w-7xl mx-auto px-12 mt-auto mb-8 relative z-20">
+                <div className="w-full bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-6 text-white/90">
+
+                    {/* A. User Avatars and Happy Diners Tracker */}
+                    <div className="flex items-center gap-3">
+                        <div className="flex -space-x-2.5 items-center">
+                            <img className="w-7 h-7 rounded-full border-2 border-zinc-950 object-cover shadow-md" src="https://unsplash.com" alt="Marie" />
+                            <img className="w-7 h-7 rounded-full border-2 border-zinc-950 object-cover shadow-md" src="https://unsplash.com" alt="David" />
+                            <img className="w-7 h-7 rounded-full border-2 border-zinc-950 object-cover shadow-md" src="https://unsplash.com" alt="Elena" />
+                            <img className="w-7 h-7 rounded-full border-2 border-zinc-950 object-cover shadow-md" src="https://unsplash.com" alt="Chloe" />
+                            <div className="w-7 h-7 rounded-full border-2 border-zinc-950 bg-white text-black font-sans text-[8px] font-extrabold flex items-center justify-center shadow-md select-none">
+                                +1.2k
+                            </div>
+                        </div>
+                        <div className="text-left font-sans">
+                            <span className="block text-[10px] font-medium leading-tight text-white/90">
+                                Join 1,200+ happy diners
+                            </span>
+                            <span className="block text-[9px] text-white/50">
+                                booking smarter every day
+                            </span>
                         </div>
                     </div>
 
-                    {/* Badge Label text */}
-                    <div className="text-left">
-                        <span className="block text-[9px] font-sans tracking-wide font-medium text-white/90 leading-tight">
-                            <b>People booking</b> <br /> on Mise tonight
-                        </span>
+                    {/* Vertical Divider (Hidden on small screens) */}
+                    <div className="hidden lg:block h-6 w-[1px] bg-white/10" />
+
+                    {/* B. Top Restaurants Criterion */}
+                    <div className="flex items-center gap-2 text-left">
+                        <Icon icon="lucide:star" className="text-white/70 w-4 h-4 flex-shrink-0" />
+                        <div className="font-sans">
+                            <span className="block text-[10px] font-medium text-white/90">Top restaurants</span>
+                            <span className="block text-[9px] text-white/50">hand-picked for you</span>
+                        </div>
                     </div>
+
+                    {/* Vertical Divider */}
+                    <div className="hidden lg:block h-6 w-[1px] bg-white/10" />
+
+                    {/* C. Secure Booking Criterion */}
+                    <div className="flex items-center gap-2 text-left">
+                        <Icon icon="lucide:shield-check" className="text-white/70 w-4 h-4 flex-shrink-0" />
+                        <div className="font-sans">
+                            <span className="block text-[10px] font-medium text-white/90">Secure booking</span>
+                            <span className="block text-[9px] text-white/50">safe & reliable</span>
+                        </div>
+                    </div>
+
+                    {/* Vertical Divider */}
+                    <div className="hidden lg:block h-6 w-[1px] bg-white/10" />
+
+                    {/* D. Real-Time Availability Criterion */}
+                    <div className="flex items-center gap-2 text-left">
+                        <Icon icon="lucide:clock" className="text-white/70 w-4 h-4 flex-shrink-0" />
+                        <div className="font-sans">
+                            <span className="block text-[10px] font-medium text-white/90">Real-time availability</span>
+                            <span className="block text-[9px] text-white/50">live updates</span>
+                        </div>
+                    </div>
+
+                    {/* Vertical Divider */}
+                    <div className="hidden lg:block h-6 w-[1px] bg-white/10" />
+
+                    {/* E. 24/7 Support Criterion */}
+                    <div className="flex items-center gap-2 text-left">
+                        <Icon icon="lucide:headphones" className="text-white/70 w-4 h-4 flex-shrink-0" />
+                        <div className="font-sans">
+                            <span className="block text-[10px] font-medium text-white/90">24/7 support</span>
+                            <span className="block text-[9px] text-white/50">we're here</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+
 
         </section>
     );
