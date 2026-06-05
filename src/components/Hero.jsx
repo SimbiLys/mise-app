@@ -1,123 +1,126 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Icon } from '@iconify/react';
 
 export default function Hero() {
-    const [role, setRole] = useState('guest');
-
     return (
-        <section id="home" className="w-full min-h-[92vh] relative flex flex-col justify-between overflow-hidden bg-black text-white border-b border-white/10">
+        <section id="home" className="w-full min-h-screen relative flex flex-col justify-center items-center overflow-hidden bg-zinc-950 text-white pt-24">
 
-            {/* IMMERSIVE FULL-BLEED BACKGROUND ASSET */}
+            {/* 1. IMMERSIVE COMPRESSED CANVAS BACKGROUND GRAPHIC FRAME */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="/hero-dining.jpg"
-                    alt="Luxury Immersive Fine Dining Atmosphere"
-                    className="w-full h-full object-cover opacity-60 transform scale-100 filter brightness-[0.45] contrast-[1.05]"
+                    src="/back.jpg"
+                    alt="Luxury Glass Conservatory Dining Hall Layout"
+                    className="w-full h-full object-cover filter brightness-[0.55] contrast-[1.02]"
                 />
-                {/* Premium Ambient Vignette Overlay to preserve white text readability */}
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent pointer-events-none" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30 pointer-events-none" />
+                <div className="absolute inset-0 bg-black/10 pointer-events-none" />
             </div>
 
-            {/* ARCHITECTURAL SLIT GRID LINES (Exactly matching your luxury layout blueprint) */}
-            <div className="absolute inset-0 grid grid-cols-1 lg:grid-cols-12 pointer-events-none z-10 opacity-25">
-                <div className="lg:col-span-7 border-r border-white/30 h-full" />
-                <div className="lg:col-span-5 h-full" />
-            </div>
 
-            {/* MAIN HERO TEXT CONTENT CONTAINER LAYER */}
-            <div className="max-w-7xl w-full mx-auto px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-20 py-16 my-auto">
 
-                {/* Left Column Content Layout */}
-                <div className="lg:col-span-7 space-y-8 max-w-2xl">
+            {/* 2. CHRONICLE CENTRAL TYPOGRAPHY STRUCTURE */}
+            <div className="max-w-4xl w-full mx-auto px-6 text-center relative z-10 flex flex-col items-center gap-6 mt-auto mb-6">
 
-                    {/* Minimal Elegant Pill Toggle Switch */}
-                    <div className="inline-flex border border-white/20 p-0.5 bg-black/40 backdrop-blur-md shadow-lg">
-                        <button
-                            onClick={() => setRole('guest')}
-                            className={`px-6 py-2 text-[9px] uppercase tracking-[0.25em] transition-all duration-500 font-semibold ${role === 'guest' ? 'bg-white text-black' : 'text-white/50 hover:text-white'
-                                }`}
-                        >
-                            Private Diner
-                        </button>
-                        <button
-                            onClick={() => setRole('maitre')}
-                            className={`px-6 py-2 text-[9px] uppercase tracking-[0.25em] transition-all duration-500 font-semibold ${role === 'maitre' ? 'bg-white text-black' : 'text-white/50 hover:text-white'
-                                }`}
-                        >
-                            Maitre D' Desk
-                        </button>
-                    </div>
+                {/* Minimal Uppercase Tag Label */}
+                <span className="text-[10px] uppercase tracking-[0.4em] text-white/90 font-bold bg-black/20 backdrop-blur-sm px-4 py-1.5 rounded-full border border-white/5">
+                    Reserve & Pre-Order
+                </span>
 
-                    {/* Premium Crisp White Typography Headings */}
-                    <div className="space-y-4">
-                        <h1 className="text-5xl md:text-7xl font-serif tracking-wide text-white leading-[1.08]">
-                            Unlock Your <br />
-                            <span className="italic font-light text-white/90">Best Dining Seats</span>
-                        </h1>
-                    </div>
+                {/* Master Serif Display Typography Header Block */}
+                <h1 className="text-4xl sm:text-6xl md:text-[68px] font-serif tracking-normal text-white leading-[1.12] max-w-3xl font-medium antialiased">
+                    Your table is set <br />
+                    Your dish is ready.
+                </h1>
 
-                    {/* Elegant Small Text Details Overlay */}
-                    <p className="text-white/60 text-xs tracking-widest leading-relaxed font-light max-w-md antialiased">
-                        Welcome to Mise—a luxury restaurant concierge infrastructure offering an unparalleled layout of gastronomy, elegance, and tailored personalized table curation. Skip standard wait delays entirely.
-                    </p>
+                {/* Supporting Editorial Body Description Descriptor */}
+                <p className="text-white/80 text-xs sm:text-sm tracking-wide leading-relaxed font-light max-w-xl text-center mix-blend-plus-lighter antialiased">
+                    Discover restaurants you'll love, reserve your table, and pre-order your meal before you even arrive. No more waiting on a packed Friday night, your first course lands the moment you sit down.
+                </p>
 
-                    {/* Action Blocks Row */}
-                    <div className="flex flex-wrap items-center gap-6 pt-4">
-                        <button className="bg-white text-black px-8 py-4 text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-zinc-200 transition-all duration-500 shadow-xl">
-                            Book Now —
-                        </button>
+                {/* 3. FLOATING COMPONENT ACTION INPUT CONSOLE CONTAINER PANEL */}
+                <div className="w-full max-w-4xl bg-white text-zinc-900 rounded-3xl p-3 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] grid grid-cols-1 md:grid-cols-12 items-center gap-4 mt-8 border border-zinc-200">
 
-                        {/* Cinematic Floating Media Card (Mirrors the reference screenshot perfectly) */}
-                        <div className="flex items-center gap-4 bg-black/40 border border-white/10 p-2 pr-6 shadow-2xl backdrop-blur-md cursor-pointer hover:border-white/30 transition-all group">
-                            <div className="w-14 h-10 bg-zinc-800 relative overflow-hidden border border-white/5">
-                                <img src="/chef-plating.jpg" alt="Plating masterclass preview" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                                    <Icon icon="lucide:play" className="text-white w-3 h-3 fill-white" />
-                                </div>
-                            </div>
-                            <div>
-                                <span className="block text-[9px] uppercase tracking-[0.2em] text-white font-bold">Watch A Video</span>
-                                <span className="block text-[8px] tracking-wider text-white/40 uppercase mt-0.5">About Us</span>
-                            </div>
+                    {/* Section A: Destination/Where Choice Field */}
+                    <div className="md:col-span-4 flex items-center gap-3 px-4 border-b md:border-b-0 md:border-r border-zinc-100 pb-3 md:pb-0 text-left">
+                        <Icon icon="lucide:map-pin" className="text-zinc-400 w-5 h-5 flex-shrink-0" />
+                        <div className="flex flex-col">
+                            <span className="text-[9px] uppercase tracking-widest text-zinc-400 font-bold">Where</span>
+                            <input
+                                type="text"
+                                placeholder="City, cuisine or restaurant"
+                                className="text-xs font-medium text-zinc-800 placeholder-zinc-400 focus:outline-none bg-transparent w-full mt-0.5"
+                            />
                         </div>
                     </div>
-                </div>
 
-                {/* Right Column Layout: Keeps the structural spacing of the screenshot open */}
-                <div className="lg:col-span-5 relative hidden lg:flex flex-col justify-end items-end min-h-[400px] pointer-events-none">
-                    {/* Subtle Corner Context Spec Label */}
-                    <div className="border border-white/10 bg-black/30 backdrop-blur-sm p-4 text-right max-w-[180px]">
-                        <span className="block text-[8px] uppercase tracking-[0.2em] text-white/40">Current Portals</span>
-                        <span className="text-sm font-serif text-white block mt-0.5">12 Private Vaults Active</span>
+                    {/* Section B: Calendar/When Choice Field */}
+                    <div className="md:col-span-2 flex items-center gap-3 px-4 border-b md:border-b-0 md:border-r border-zinc-100 pb-3 md:pb-0 text-left">
+                        <Icon icon="lucide:calendar" className="text-zinc-400 w-5 h-5 flex-shrink-0" />
+                        <div className="flex flex-col">
+                            <span className="text-[9px] uppercase tracking-widest text-zinc-400 font-bold">When</span>
+                            <span className="text-xs font-semibold text-zinc-800 mt-0.5 cursor-pointer">Tonight</span>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            {/* HORIZONTAL CONCIERGE LOOKUP BAR (Anchored perfectly at the base of your hero viewport) */}
-            <div className="w-full bg-black/60 backdrop-blur-xl border-t border-white/10 py-6 relative z-20 shadow-[0_-10px_30px_rgba(0,0,0,0.3)]">
-                <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 md:grid-cols-5 gap-6 text-left items-center">
-                    <div className="border-r border-white/10 pr-2">
-                        <span className="block text-[8px] uppercase tracking-[0.2em] text-white/40 mb-1 font-medium">Cuisine Style</span>
-                        <span className="text-xs font-serif font-bold text-white flex items-center gap-1.5 tracking-wide">Modern French <Icon icon="lucide:chevron-down" className="text-white/40 w-3 h-3" /></span>
+                    {/* Section C: Target Seating Time Selection Area */}
+                    <div className="md:col-span-2 flex items-center gap-3 px-4 border-b md:border-b-0 md:border-r border-zinc-100 pb-3 md:pb-0 text-left">
+                        <Icon icon="lucide:clock" className="text-zinc-400 w-5 h-5 flex-shrink-0" />
+                        <div className="flex flex-col">
+                            <span className="text-[9px] uppercase tracking-widest text-zinc-400 font-bold">Time</span>
+                            <span className="text-xs font-semibold text-zinc-800 mt-0.5 cursor-pointer">7:30 PM</span>
+                        </div>
                     </div>
-                    <div className="border-r border-white/10 pr-2">
-                        <span className="block text-[8px] uppercase tracking-[0.2em] text-white/40 mb-1 font-medium">Calendar Horizon</span>
-                        <span className="text-xs font-serif font-bold text-white tracking-wide">Tonight, June 4</span>
+
+                    {/* Section D: Party Volume Capacity Field */}
+                    <div className="md:col-span-2 flex items-center gap-3 px-4 pb-2 md:pb-0 text-left">
+                        <Icon icon="lucide:users" className="text-zinc-400 w-5 h-5 flex-shrink-0" />
+                        <div className="flex flex-col">
+                            <span className="text-[9px] uppercase tracking-widest text-zinc-400 font-bold">Guests</span>
+                            <span className="text-xs font-semibold text-zinc-800 mt-0.5 cursor-pointer">2 people</span>
+                        </div>
                     </div>
-                    <div className="border-r border-white/10 pr-2">
-                        <span className="block text-[8px] uppercase tracking-[0.2em] text-white/40 mb-1 font-medium">Time Window</span>
-                        <span className="text-xs font-serif font-bold text-white tracking-wide">20:30 Counter</span>
-                    </div>
-                    <div>
-                        <span className="block text-[8px] uppercase tracking-[0.2em] text-white/40 mb-1 font-medium">Volume</span>
-                        <span className="text-xs font-serif font-bold text-white tracking-wide">02 Connoisseurs</span>
-                    </div>
-                    <button className="col-span-2 md:col-span-1 bg-white text-black h-12 text-[9px] uppercase tracking-[0.25em] font-bold hover:bg-zinc-200 transition-colors duration-500 shadow-md">
-                        Search Ateliers
+
+                    {/* Form Processing Submit Button */}
+                    <button className="md:col-span-2 bg-[#1C1B1A] hover:bg-zinc-800 text-white rounded-2xl h-14 font-medium text-xs tracking-wider flex items-center justify-center gap-2 transition-all duration-300 shadow-md">
+                        <Icon icon="lucide:search" className="w-3.5 h-3.5" /> Find a table
                     </button>
                 </div>
+
             </div>
+
+            {/* 4. LOWER BOUND CONTEXT TRUST COUNTER BADGE TRACKER */}
+            <div className="w-full max-w-7xl mx-auto px-12 flex justify-end mt-auto mb-8 relative z-20 pointer-events-none">
+                <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-full p-2 pr-5 flex items-center gap-3 shadow-xl">
+                    {/* Overlapping User Circle Avatars with Real HD Profile Pictures */}
+                    <div className="flex -space-x-2.5 items-center pointer-events-auto">
+                        <img
+                            className="w-7 h-7 rounded-full border-2 border-zinc-950 object-cover shadow-md"
+                            src="https://unsplash.com"
+                            alt="Active Diner Marie"
+                        />
+                        <img
+                            className="w-7 h-7 rounded-full border-2 border-zinc-950 object-cover shadow-md"
+                            src="https://unsplash.com"
+                            alt="Active Diner David"
+                        />
+                        <img
+                            className="w-7 h-7 rounded-full border-2 border-zinc-950 object-cover shadow-md"
+                            src="https://unsplash.com"
+                            alt="Active Diner Elena"
+                        />
+                        <div className="w-7 h-7 rounded-full border-2 border-zinc-950 bg-white text-black font-sans text-[8px] font-extrabold flex items-center justify-center shadow-md select-none">
+                            +1.2k
+                        </div>
+                    </div>
+
+                    {/* Badge Label text */}
+                    <div className="text-left">
+                        <span className="block text-[9px] font-sans tracking-wide font-medium text-white/90 leading-tight">
+                            <b>People booking</b> <br /> on Mise tonight
+                        </span>
+                    </div>
+                </div>
+            </div>
+
         </section>
     );
 }
