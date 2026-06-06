@@ -8,9 +8,9 @@ export default function Hero() {
             {/* 1. IMMERSIVE COMPRESSED CANVAS BACKGROUND GRAPHIC FRAME */}
             <div className="absolute inset-0 z-0">
                 <img
-                    src="/back.jpg"
+                    src="/back.png"
                     alt="Luxury Glass Conservatory Dining Hall Layout"
-                    className="w-full h-full object-cover filter brightness-[0.45] contrast-[1.05]"
+                    className="w-full h-full object-cover filter brightness-[1.00] contrast-[1.00]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 pointer-events-none" />
                 <div className="absolute inset-0 bg-black/20 pointer-events-none" />
@@ -24,16 +24,16 @@ export default function Hero() {
                 </span>
 
                 <h1 className="text-4xl sm:text-6xl md:text-[62px] font-serif tracking-normal text-white leading-[1.12] max-w-3xl font-medium antialiased">
-                    Your table is set. <br />
+                    Your table is set <br />
                     Your dish is ready.
                 </h1>
 
                 <p className="text-white/80 text-xs tracking-wide leading-relaxed font-light max-w-xl text-center mix-blend-plus-lighter antialiased">
-                    Discover restaurants you'll love, reserve your table, and pre-order your meal before you even arrive. No more waiting on a packed Friday night — your first course lands the moment you sit down.
+                    Discover restaurants you'll love, reserve your table, and pre-order your meal before you even arrive. No more waiting on a packed Friday night,  your first course lands the moment you sit down.
                 </p>
 
                 {/* 3. HIGH-INTERACTIVE FLOATING WHITE CONSOLE PANEL */}
-                <div className="w-full max-w-4xl bg-white text-zinc-900 rounded-3xl p-2.5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] grid grid-cols-1 md:grid-cols-12 items-center gap-2 mt-6 border border-zinc-200/80 transition-all duration-300 hover:shadow-[0_30px_70px_-10px_rgba(0,0,0,0.6)]">
+                <div className="w-full max-w-4xl bg-zinc-200  text-zinc-900 rounded-3xl p-2.5 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.5)] grid grid-cols-1 md:grid-cols-12 items-center gap-2 mt-6 border border-zinc-200/80 transition-all duration-300 hover:shadow-[0_30px_70px_-10px_rgba(0,0,0,0.6)]">
 
                     {/* Where Input Section with active focus states */}
                     <div className="md:col-span-4 flex items-center gap-3 px-4 py-2 border-b md:border-b-0 md:border-r border-zinc-100 text-left group">
