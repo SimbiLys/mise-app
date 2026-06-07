@@ -53,7 +53,7 @@ export function PortfolioSection() {
                         Three taps, and you're <span className="italic font-light">eating</span>
                     </h2>
                     {/* Increased text-xs -> text-base and updated text color to zinc-500 for better legibility */}
-                    <p className="text-zinc-500 text-base sm:text-lg leading-relaxed font-light antialiased">
+                    <p className="text-zinc-500 text-base sm:text-lg leading-relaxed font-serif antialiased">
                         From browsing to bites in minutes, your table, your time, your way. Mise is where you can browse restaurants, their menus, book tables and all that within a blink of an eye.
                     </p>
                 </div>
