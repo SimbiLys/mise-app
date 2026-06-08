@@ -3,134 +3,198 @@ import { Icon } from '@iconify/react';
 
 export default function SignIn({ setView }) {
     return (
-        <div className="w-full min-h-screen bg-[#F9F8F6] text-[#1C1B1A] grid grid-cols-1 lg:grid-cols-12 overflow-hidden select-none">
+        <div className="w-full min-h-screen bg-[#F3F4F6] text-[#111827] grid grid-cols-1 lg:grid-cols-2 overflow-hidden select-none font-sans">
 
-            {/* 🧭 LEFT COLUMN: FULLY VISIBLE LUXURY IMAGE (NO DARK OVERLAYS) */}
-            <div className="hidden lg:flex lg:col-span-5 relative flex-col justify-between p-16 overflow-hidden border-r border-black/10">
+            {/* 🖼️ LEFT COLUMN: IMAGE AND HERO TEXT (50% Width) */}
+            <div className="hidden lg:flex relative flex-col justify-between p-12 overflow-hidden">
 
-                {/* CRISP, CLEAR IMAGE BACKDROP */}
+                {/* Background Image */}
                 <div className="absolute inset-0 z-0">
                     <img
-                        src="/sign.jpg"
-                        alt="Mise Culinary Ambience"
-                        className="w-full h-full object-cover filter brightness-[0.95] contrast-[1.00]"
+                        src="/atrium.jpg"
+                        alt="Mise Restaurant Ambience"
+                        className="w-full h-full object-cover brightness-[0.90]"
                     />
-                    {/* Subtle light vignette just to protect top logo text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-transparent pointer-events-none" />
                 </div>
 
-                {/* 🌟 CHOSEN SLOT FOR YOUR MISE LOGO IMAGE */}
-                <div className="relative z-10 flex flex-col gap-3 text-left">
-                    <div className="flex items-center gap-4">
-                        {/* <img src="/logo.png" className="w-12 h-12 object-contain" alt="Mise Logo" /> */}
-                        <div className="w-12 h-12 rounded-full border border-black/20 flex items-center justify-center text-base font-serif bg-white/80 backdrop-blur-sm font-bold text-[#2C4A3E]">M</div>
-
-                        <div className="flex flex-col">
-                            <span className="text-xl font-serif tracking-[0.25em] uppercase font-bold text-[#1C1B1A]">Mise</span>
-                            <span className="text-[9px] tracking-[0.3em] uppercase text-black/40 font-bold">Reserve & Pre-Order</span>
+                {/* Top Header Row */}
+                <div className="relative z-10 flex justify-between items-start w-full">
+                    {/* Brand Logo Group */}
+                    <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-sm font-serif bg-white/15 backdrop-blur-md font-bold text-white">
+                            M
+                        </div>
+                        <div className="flex flex-col text-white">
+                            <span className="text-lg font-serif tracking-[0.2em] uppercase font-semibold leading-tight">Mise</span>
+                            <span className="text-[8px] tracking-[0.25em] uppercase text-white/60 font-medium">Reserve & Pre-Order</span>
                         </div>
                     </div>
+
+                    {/* Back to Home Link */}
+                    <button
+                        onClick={() => setView('landing')}
+                        className="text-[11px] uppercase tracking-widest text-white/70 hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer font-medium"
+                    >
+                        ← Back to home
+                    </button>
                 </div>
 
-                {/* Headline text */}
-                <div className="relative z-10 text-left space-y-4 my-auto max-w-sm">
-                    <span className="text-[9px] uppercase tracking-[0.4em] text-[#2C4A3E] font-bold block">Exclusive Entry</span>
-                    <h2 className="text-4xl font-serif tracking-normal leading-[1.25] font-medium text-[#1C1B1A]">
+                {/* Middle Text Content */}
+                <div className="relative z-10 text-left space-y-4 max-w-md mt-auto mb-auto">
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-white/70 font-semibold block">CITY CUISINE • TONIGHT</span>
+                    <h2 className="text-5xl font-serif tracking-normal leading-[1.15] font-normal text-white">
                         Your table is set.<br />
                         Your dish is ready.
                     </h2>
+                    <p className="text-white/80 text-sm max-w-sm leading-relaxed font-normal">
+                        Discover restaurants you'll love, reserve your table, and pre-order before you even arrive.
+                    </p>
                 </div>
 
-                {/* Back navigation option link */}
-                <div className="relative z-10 text-left">
-                    <button
-                        onClick={() => setView('landing')}
-                        className="text-xs uppercase tracking-widest text-black/50 hover:text-black flex items-center gap-2 transition-colors duration-300 group cursor-pointer font-semibold"
-                    >
-                        <span className="transform group-hover:-translate-x-1 transition-transform">←</span> Back to home
-                    </button>
+                {/* Bottom Social Proof Counter */}
+                <div className="relative z-10 flex items-center gap-3 bg-black/10 backdrop-blur-md border border-white/10 rounded-full py-2 px-4 w-fit">
+                    <div className="flex -space-x-2">
+                        <div className="w-6 h-6 rounded-full bg-gray-300 border border-white/50"></div>
+                        <div className="w-6 h-6 rounded-full bg-gray-400 border border-white/50"></div>
+                        <div className="w-6 h-6 rounded-full bg-gray-500 border border-white/50"></div>
+                    </div>
+                    <span className="text-xs text-white/90 font-medium tracking-wide">
+                        Join <span className="font-bold">1,200+ diners</span> booking this week
+                    </span>
                 </div>
             </div>
 
-            {/* 📝 RIGHT COLUMN: SPACIOUS PURE WHITE LIGHT THEME FORM PANEL */}
-            <div className="col-span-1 lg:col-span-7 flex flex-col justify-center items-center p-8 sm:p-16 md:p-24 bg-[#F9F8F6] relative z-10">
+            {/* 📝 RIGHT COLUMN: SIGN IN FORM CANVAS (50% Width) */}
+            <div className="flex flex-col justify-between items-center p-6 sm:p-12 md:p-16 bg-[#F4F4F6] relative z-10 min-h-screen">
 
-                {/* Switch Route Link */}
-                <div className="absolute top-12 right-12 text-sm tracking-wide text-black/40">
+                {/* Top Right Navigation */}
+                <div className="w-full flex justify-end text-sm text-gray-500 font-normal">
                     New to Mise?{' '}
-                    <button onClick={() => setView('signup')} className="text-black hover:underline font-bold transition-all ml-1 cursor-pointer">
+                    <button
+                        onClick={() => setView('signup')}
+                        className="text-black underline font-semibold ml-1 cursor-pointer"
+                    >
                         Create account
                     </button>
                 </div>
 
-                {/* LARGER, LIGHT CANVAS CARD FORM WRAPPER (PURE DAYLIGHT WHITE) */}
-                <div className="w-full max-w-xl bg-white border border-black/10 rounded-[32px] p-8 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)] text-left space-y-8">
+                {/* Center Form Card - Hardcoded Custom Styles */}
+                <div
+                    style={{
+                        width: '100%',
+                        maxWidth: '540px',
+                        padding: '52px',
+                        backgroundColor: '#ffffff',
+                        borderRadius: '32px',
+                        boxShadow: '0 10px 40px rgba(0,0,0,0.03)',
+                        border: '1px solid #E5E7EB',
+                        marginTop: 'auto',
+                        marginBottom: 'auto',
+                        textAlign: 'left'
+                    }}
+                >
 
-                    <div className="space-y-2 text-center sm:text-left">
-                        <h3 className="text-3xl font-serif tracking-wide font-medium text-[#1C1B1A]">Sign in to Mise</h3>
-                        <p className="text-black/40 text-sm font-light tracking-wide">Let's get you started on your gourmet journey.</p>
+                    {/* Header */}
+                    <div style={{ marginBottom: '36px' }}>
+                        <span style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#9CA3AF', fontWeight: 'bold', display: 'block', marginBottom: '8px' }}>
+                            WELCOME BACK
+                        </span>
+                        <h3 style={{ fontSize: '1.875rem', fontFamily: 'ui-serif, Georgia', fontWeight: 'normal', color: '#111827', marginBottom: '6px' }}>
+                            Sign in to Mise
+                        </h3>
+                        <p style={{ fontSize: '1rem', color: '#6B7280', fontWeight: 'normal' }}>
+                            Reserve, pre-order, and skip the wait.
+                        </p>
                     </div>
 
-                    {/* Social login option columns */}
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                        <button className="flex items-center justify-center gap-2.5 border border-black/10 bg-[#F9F8F6] rounded-xl py-4 text-xs tracking-wider uppercase font-bold hover:bg-black/5 transition-colors cursor-pointer text-zinc-700">
+                    {/* Social Buttons Row */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '16px', marginBottom: '36px' }}>
+                        <button className="flex items-center justify-center gap-3 border border-gray-200 bg-white rounded-xl py-3.5 text-sm font-medium hover:bg-gray-50 transition-colors cursor-pointer text-gray-700 shadow-sm">
                             <Icon icon="logos:google-icon" className="w-4 h-4" /> Google
                         </button>
-                        <button className="flex items-center justify-center gap-2.5 border border-black/10 bg-[#F9F8F6] rounded-xl py-4 text-xs tracking-wider uppercase font-bold hover:bg-black/5 transition-colors cursor-pointer text-zinc-700">
+                        <button className="flex items-center justify-center gap-3 border border-gray-200 bg-white rounded-xl py-3.5 text-sm font-medium hover:bg-gray-50 transition-colors cursor-pointer text-gray-700 shadow-sm">
                             <Icon icon="ri:apple-fill" className="w-4 h-4 text-black" /> Apple
                         </button>
-                        <button className="flex items-center justify-center gap-2.5 border border-black/10 bg-[#F9F8F6] rounded-xl py-4 text-xs tracking-wider uppercase font-bold hover:bg-black/5 transition-colors cursor-pointer text-zinc-700">
-                            <Icon icon="logos:facebook" className="w-4 h-4" /> Facebook
-                        </button>
                     </div>
 
-                    <div className="relative flex items-center justify-center py-2">
-                        <div className="w-full border-t border-black/10" />
-                        <span className="absolute bg-white px-4 text-[9px] uppercase tracking-[0.25em] text-black/30 font-bold select-none">or use email</span>
+                    {/* Divider */}
+                    <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '36px' }}>
+                        <div style={{ width: '100%', borderTop: '1px solid #E5E7EB' }} />
+                        <span style={{ position: 'absolute', backgroundColor: '#ffffff', paddingLeft: '16px', paddingRight: '16px', fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#9CA3AF', fontWeight: '600' }}>
+                            or continue with email
+                        </span>
                     </div>
 
-                    {/* BRIGHT TEXT ENTRIES WITH CRISP INPUT FIELDS */}
-                    <div className="space-y-5">
-                        {/* Email Box */}
-                        <div className="flex flex-col gap-2">
-                            <label className="text-[10px] uppercase tracking-widest text-black/50 font-bold">Email Address</label>
-                            <div className="w-full bg-[#F9F8F6] border border-black/10 rounded-xl px-4 py-4 flex items-center gap-3.5 focus-within:border-black/30 transition-colors">
-                                <Icon icon="lucide:mail" className="text-black/30 w-4 h-4 flex-shrink-0" />
-
-                            </div>
-                        </div>
-
-                        {/* Password Box */}
-                        <div className="flex flex-col gap-2">
-                            <div className="flex justify-between items-center">
-                                <label className="text-[10px] uppercase tracking-widest text-black/50 font-bold">Password</label>
-                                <span className="text-[10px] uppercase tracking-widest text-[#2C4A3E] hover:underline cursor-pointer font-bold">Forgot?</span>
-                            </div>
-                            <div className="w-full bg-[#F9F8F6] border border-black/10 rounded-xl px-4 py-4 flex items-center gap-3.5 focus-within:border-black/30 transition-colors">
-                                <Icon icon="lucide:lock" className="text-black/30 w-4 h-4 flex-shrink-0" />
+                    {/* Input Fields Container */}
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', marginBottom: '36px' }}>
+                        {/* Email Address */}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                            <label style={{ fontSize: '12px', letterSpacing: '0.05em', textTransform: 'uppercase', color: '#374151', fontWeight: 'bold' }}>
+                                EMAIL ADDRESS
+                            </label>
+                            <div className="w-full bg-white border border-gray-200 rounded-xl px-4 py-4 flex items-center gap-3.5 focus-within:border-gray-400 transition-colors shadow-sm">
+                                <Icon icon="lucide:mail" className="text-gray-400 w-4.5 h-4.5 flex-shrink-0" />
                                 <input
-                                    type="password"
-                                    placeholder="Password credentials"
-                                    className="w-full text-sm bg-transparent text-[#1C1B1A] placeholder-black/30 focus:outline-none font-medium tracking-widest"
+                                    type="email"
+                                    placeholder="you@example.com"
+                                    className="w-full text-base bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none font-normal"
                                 />
                             </div>
                         </div>
+
+                        {/* Password */}
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <label style={{ fontSize: '12px', letterSpacing: '0.05em', textTransform: 'uppercase', color: '#374151', fontWeight: 'bold' }}>
+                                    PASSWORD
+                                </label>
+                                <span style={{ fontSize: '12px', color: '#6B7280', cursor: 'pointer', fontWeight: '600' }} className="hover:underline">
+                                    Forgot?
+                                </span>
+                            </div>
+                            <div className="w-full bg-white border border-gray-200 rounded-xl px-4 py-4 flex items-center gap-3.5 focus-within:border-gray-400 transition-colors shadow-sm">
+                                <Icon icon="lucide:lock" className="text-gray-400 w-4.5 h-4.5 flex-shrink-0" />
+                                <input
+                                    type="password"
+                                    placeholder="••••••••"
+                                />
+                                <Icon icon="lucide:eye" className="text-gray-400 w-4.5 h-4.5 flex-shrink-0 cursor-pointer hover:text-gray-600" />
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="flex items-center gap-3 cursor-pointer group pt-1">
-                        <input type="checkbox" id="keep-signed-light" className="w-4 h-4 rounded border-black/10 accent-black cursor-pointer" />
-                        <label htmlFor="keep-signed-light" className="text-xs text-black/50 font-light select-none group-hover:text-black transition-colors cursor-pointer">
+                    {/* Keep Logged In Checkbox */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '36px', cursor: 'pointer', width: 'fit-content' }}>
+                        <input
+                            type="checkbox"
+                            id="remember"
+                            className="w-4.5 h-4.5 accent-black rounded border-gray-300 focus:ring-0 cursor-pointer"
+                            defaultChecked
+                        />
+                        <label htmlFor="remember" style={{ fontSize: '14px', color: '#374151', fontWeight: '500', cursor: 'pointer' }}>
                             Keep me signed in
                         </label>
                     </div>
 
-                    {/* PURE LUXURY DARK SUBMIT BUTTON */}
-                    <button className="w-full bg-[#1C1B1A] text-white text-xs font-bold py-4.5 rounded-xl uppercase tracking-[0.25em] hover:bg-zinc-800 transition-colors duration-500 shadow-lg flex items-center justify-center gap-2 cursor-pointer font-sans">
-                        Sign In As Client <Icon icon="lucide:arrow-right" className="w-4 h-4" />
+                    {/* Main Action Button */}
+                    <button className="w-full bg-[#18181B] hover:bg-black text-white rounded-xl py-4 text-base font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                        Sign in <span className="text-lg">→</span>
                     </button>
                 </div>
 
+                {/* Bottom Footer Information */}
+                <div className="w-full flex justify-between items-center text-[11px] text-gray-400 px-4">
+                    <span className="flex items-center gap-1">
+                        <Icon icon="lucide:shield-check" className="w-3.5 h-3.5" /> Secure & reliable booking
+                    </span>
+                    <div className="flex gap-3">
+                        <a href="#terms" className="hover:underline">Terms</a>
+                        <span>•</span>
+                        <a href="#privacy" className="hover:underline">Privacy</a>
+                    </div>
+                </div>
             </div>
+
         </div>
     );
 }
