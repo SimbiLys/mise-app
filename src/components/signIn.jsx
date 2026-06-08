@@ -187,7 +187,7 @@ export default function SignIn({ setView }) {
                 </div>
 
                 {/* Bottom Secure Anchor Badge */}
-                <div style={{ paddingBottom: '16px' }} className="w-full flex justify-start text-[11px] text-gray-400 px-4">
+                <div style={{ paddingBottom: '16px' }} className="w-full flex justify-end text-[11px] text-gray-400 px-4">
                     <span className="flex items-center gap-1">
                         <Icon icon="lucide:shield-check" className="w-3.5 h-3.5" /> Secure & reliable booking
                     </span>
