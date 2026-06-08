@@ -198,8 +198,12 @@ export default function SignUp({ setView }) {
                         </label>
                     </div>
 
-                    {/* Primary Orange Action Button */}
-                    <button style={{ marginBottom: '24px', backgroundColor: 'black' }} className="w-full hover:brightness-95 text-white rounded-xl py-4 text-base font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                    {/* Primary black Action Button */}
+                    <button
+                        onClick={() => setView('signin')}
+                        style={{ marginBottom: '24px', backgroundColor: 'black' }}
+                        className="w-full hover:brightness-95 text-white rounded-xl py-4 text-base font-semibold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                    >
                         Register as a client <span className="text-lg">→</span>
                     </button>
                 </div>
