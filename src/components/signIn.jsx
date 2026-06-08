@@ -40,28 +40,18 @@ export default function SignIn({ setView }) {
                 </div>
 
                 {/* Middle Text Content */}
-                <div className="relative z-10 text-left space-y-4 max-w-md mt-auto mb-auto">
+                <div className="relative z-10 text-left space-y-4 max-w-md mt-auto mb-auto pb-40">
                     <span className="text-[10px] uppercase tracking-[0.3em] text-white/70 font-semibold block">CITY CUISINE • TONIGHT</span>
-                    <h2 className="text-5xl font-serif tracking-normal leading-[1.15] font-normal text-white">
+                    <h2 className="text-6xl font-serif tracking-normal leading-[1.15] font-normal text-white">
                         Your table is set.<br />
                         Your dish is ready.
                     </h2>
-                    <p className="text-white/80 text-sm max-w-sm leading-relaxed font-normal">
+                    <p className="text-white text-base max-w-lg leading-relaxed font-semibold">
                         Discover restaurants you'll love, reserve your table, and pre-order before you even arrive.
                     </p>
                 </div>
 
-                {/* Bottom Social Proof Counter */}
-                <div className="relative z-10 flex items-center gap-3 bg-black/10 backdrop-blur-md border border-white/10 rounded-full py-2 px-4 w-fit">
-                    <div className="flex -space-x-2">
-                        <div className="w-6 h-6 rounded-full bg-gray-300 border border-white/50"></div>
-                        <div className="w-6 h-6 rounded-full bg-gray-400 border border-white/50"></div>
-                        <div className="w-6 h-6 rounded-full bg-gray-500 border border-white/50"></div>
-                    </div>
-                    <span className="text-xs text-white/90 font-medium tracking-wide">
-                        Join <span className="font-bold">1,200+ diners</span> booking this week
-                    </span>
-                </div>
+
             </div>
 
             {/* 📝 RIGHT COLUMN: SIGN IN FORM CANVAS (50% Width) */}
