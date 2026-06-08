@@ -40,13 +40,13 @@ export default function SignUp({ setView }) {
                 </div>
 
                 {/* Middle Text Content */}
-                <div className="relative z-10 text-left space-y-4 max-w-md mt-auto mb-auto">
+                <div className="relative z-10 text-left space-y-4 max-w-md mt-auto mb-auto pb-16">
                     <span className="text-[10px] uppercase tracking-[0.3em] text-white/70 font-semibold block">CITY CUISINE • TONIGHT</span>
-                    <h2 className="text-5xl font-serif tracking-normal leading-[1.15] font-normal text-white">
+                    <h2 className="text-6xl font-serif tracking-bold leading-[1.15] font-normal text-white">
                         Your table is set.<br />
                         Your dish is ready.
                     </h2>
-                    <p className="text-white/80 text-sm max-w-sm leading-relaxed font-normal">
+                    <p className="text-white/80 text-base max-w-lg leading-relaxed font-semibold">
                         Discover restaurants you'll love, reserve your table, and pre-order before you even arrive.
                     </p>
                 </div>
