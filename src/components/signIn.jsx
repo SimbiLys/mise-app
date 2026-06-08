@@ -78,7 +78,7 @@ export default function SignIn({ setView }) {
                     </button>
                 </div>
 
-                {/* Center Form Card - Hardcoded Custom Styles */}
+                {/* Center Form Card - Shifted lower with marginTop */}
                 <div
                     style={{
                         width: '100%',
@@ -88,7 +88,7 @@ export default function SignIn({ setView }) {
                         borderRadius: '32px',
                         boxShadow: '0 10px 40px rgba(0,0,0,0.03)',
                         border: '1px solid #E5E7EB',
-                        marginTop: 'auto',
+                        marginTop: '40px',
                         marginBottom: 'auto',
                         textAlign: 'left'
                     }}
@@ -96,15 +96,9 @@ export default function SignIn({ setView }) {
 
                     {/* Header */}
                     <div style={{ marginBottom: '36px' }}>
-                        <span style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', color: '#9CA3AF', fontWeight: 'bold', display: 'block', marginBottom: '8px' }}>
-                            WELCOME BACK
-                        </span>
-                        <h3 style={{ fontSize: '1.875rem', fontFamily: 'ui-serif, Georgia', fontWeight: 'normal', color: '#111827', marginBottom: '6px' }}>
+                        <h3 style={{ fontSize: '2.2rem', fontFamily: 'ui-serif, Georgia', fontWeight: 'normal', color: '#111827', marginBottom: '6px' }}>
                             Sign in to Mise
                         </h3>
-                        <p style={{ fontSize: '1rem', color: '#6B7280', fontWeight: 'normal' }}>
-                            Reserve, pre-order, and skip the wait.
-                        </p>
                     </div>
 
                     {/* Social Buttons Row */}
@@ -129,8 +123,8 @@ export default function SignIn({ setView }) {
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', marginBottom: '36px' }}>
                         {/* Email Address */}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                            <label style={{ fontSize: '12px', letterSpacing: '0.05em', textTransform: 'uppercase', color: '#374151', fontWeight: 'bold' }}>
-                                EMAIL ADDRESS
+                            <label style={{ fontSize: '14px', color: '#111827', fontWeight: 'bold' }}>
+                                Email address
                             </label>
                             <div className="w-full bg-white border border-gray-200 rounded-xl px-4 py-4 flex items-center gap-3.5 focus-within:border-gray-400 transition-colors shadow-sm">
                                 <Icon icon="lucide:mail" className="text-gray-400 w-4.5 h-4.5 flex-shrink-0" />
@@ -145,20 +139,23 @@ export default function SignIn({ setView }) {
                         {/* Password */}
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <label style={{ fontSize: '12px', letterSpacing: '0.05em', textTransform: 'uppercase', color: '#374151', fontWeight: 'bold' }}>
-                                    PASSWORD
+                                <label style={{ fontSize: '14px', color: '#111827', fontWeight: 'bold' }}>
+                                    Password
                                 </label>
-                                <span style={{ fontSize: '12px', color: '#6B7280', cursor: 'pointer', fontWeight: '600' }} className="hover:underline">
+                                <span style={{ fontSize: '13px', color: '#6B7280', cursor: 'pointer', fontWeight: '500' }} className="hover:underline">
                                     Forgot?
                                 </span>
                             </div>
-                            <div className="w-full bg-white border border-gray-200 rounded-xl px-4 py-4 flex items-center gap-3.5 focus-within:border-gray-400 transition-colors shadow-sm">
-                                <Icon icon="lucide:lock" className="text-gray-400 w-4.5 h-4.5 flex-shrink-0" />
-                                <input
-                                    type="password"
-                                    placeholder="••••••••"
-                                />
-                                <Icon icon="lucide:eye" className="text-gray-400 w-4.5 h-4.5 flex-shrink-0 cursor-pointer hover:text-gray-600" />
+                            <div className="w-full bg-white border border-gray-200 rounded-xl px-4 py-4 flex items-center justify-between focus-within:border-gray-400 transition-colors shadow-sm">
+                                <div className="flex items-center gap-3.5 w-full">
+                                    <Icon icon="lucide:lock" className="text-gray-400 w-4.5 h-4.5 flex-shrink-0" />
+                                    <input
+                                        type="password"
+                                        placeholder="••••••••"
+                                        className="w-full text-base bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none font-normal tracking-wide"
+                                    />
+                                </div>
+                                <Icon icon="lucide:eye" className="text-gray-400 w-4.5 h-4.5 flex-shrink-0 cursor-pointer hover:text-gray-600 ml-2" />
                             </div>
                         </div>
                     </div>
@@ -177,21 +174,23 @@ export default function SignIn({ setView }) {
                     </div>
 
                     {/* Main Action Button */}
-                    <button className="w-full bg-[#18181B] hover:bg-black text-white rounded-xl py-4 text-base font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                    <button style={{ marginBottom: '24px' }} className="w-full bg-[#18181B] hover:bg-black text-white rounded-xl py-4 text-base font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
                         Sign in <span className="text-lg">→</span>
                     </button>
-                </div>
 
-                {/* Bottom Footer Information */}
-                <div className="w-full flex justify-between items-center text-[11px] text-gray-400 px-4">
-                    <span className="flex items-center gap-1">
-                        <Icon icon="lucide:shield-check" className="w-3.5 h-3.5" /> Secure & reliable booking
-                    </span>
-                    <div className="flex gap-3">
+                    {/* 🔗 New Terms and Policy Location under the Sign In Button */}
+                    <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', fontSize: '12px', color: '#9CA3AF' }}>
                         <a href="#terms" className="hover:underline">Terms</a>
                         <span>•</span>
                         <a href="#privacy" className="hover:underline">Privacy</a>
                     </div>
+                </div>
+
+                {/* Bottom Secure Anchor Badge */}
+                <div style={{ paddingBottom: '16px' }} className="w-full flex justify-start text-[11px] text-gray-400 px-4">
+                    <span className="flex items-center gap-1">
+                        <Icon icon="lucide:shield-check" className="w-3.5 h-3.5" /> Secure & reliable booking
+                    </span>
                 </div>
             </div>
 
