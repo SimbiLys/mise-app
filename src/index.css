@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* Infinite Horizontal Smooth Sliding Loop Properties */
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    display: flex !important;
+    animation: marquee 30s linear infinite !important;
+}
+
+/* Gracefully halt the looping crawl whenever a cursor passes over items */
+.pause-marquee:hover {
+    animation-play-state: paused !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.4s !important;
+    animation-timing-function: ease-in-out !important;
+}
