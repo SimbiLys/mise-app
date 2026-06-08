@@ -41,7 +41,7 @@ export default function SignIn({ setView }) {
 
                 {/* Middle Text Content */}
                 <div className="relative z-10 text-left space-y-4 max-w-md mt-auto mb-auto pb-40">
-                    <span className="text-[10px] uppercase tracking-[0.3em] text-white/70 font-semibold block">CITY CUISINE • TONIGHT</span>
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-white/90 font-semibold block">CITY CUISINE • TONIGHT</span>
                     <h2 className="text-6xl font-serif tracking-normal leading-[1.15] font-normal text-white">
                         Your table is set.<br />
                         Your dish is ready.
