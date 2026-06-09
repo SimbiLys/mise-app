@@ -8,6 +8,7 @@ import CtaSection from './components/CtaSection';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Dashboard from './components/Dashboard';
+import Restaurant from './components/Restaurant'; // Your component import
 
 export default function App() {
     const [view, setViewState] = useState('landing');
@@ -49,6 +50,9 @@ export default function App() {
 
             {/* 🍽️ THE INNER APP DASHBOARD LAYER */}
             {view === 'dashboard' && <Dashboard setView={setView} />}
+
+            {/* 🗺️ RESTAURANTS LAYER (Added this to fix your blank screen!) */}
+            {view === 'restaurants' && <Restaurant setView={setView} />}
 
         </div>
     );
