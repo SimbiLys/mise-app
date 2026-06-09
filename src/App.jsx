@@ -8,11 +8,13 @@ import CtaSection from './components/CtaSection';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Dashboard from './components/Dashboard';
-import Restaurant from './components/Restaurant'; // Your component import
+import Restaurant from './components/Restaurant';
+import Menu from './components/Menu'; // Cleanly imported Menu Page
 
 export default function App() {
     const [view, setViewState] = useState('landing');
 
+    // Smooth state view transitions animation wrapper handler
     const setView = (nextView) => {
         if (!document.startViewTransition) {
             setViewState(nextView);
@@ -51,8 +53,11 @@ export default function App() {
             {/* 🍽️ THE INNER APP DASHBOARD LAYER */}
             {view === 'dashboard' && <Dashboard setView={setView} />}
 
-            {/* 🗺️ RESTAURANTS LAYER (Added this to fix your blank screen!) */}
+            {/* 🗺️ RESTAURANTS PROFILE FLOW LAYER */}
             {view === 'restaurants' && <Restaurant setView={setView} />}
+
+            {/* 📜 NEW MENU CATEGORIES ARC CANVAS LAYER */}
+            {view === 'menu' && <Menu setView={setView} />}
 
         </div>
     );
