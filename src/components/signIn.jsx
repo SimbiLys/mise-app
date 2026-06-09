@@ -164,9 +164,14 @@ export default function SignIn({ setView }) {
                     </div>
 
                     {/* Main Action Button */}
-                    <button style={{ marginBottom: '24px' }} className="w-full bg-[#18181B] hover:bg-black text-white rounded-xl py-4 text-base font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                    <button
+                        onClick={() => setView('dashboard')}
+                        style={{ marginBottom: '24px' }}
+                        className="w-full bg-[#18181B] hover:bg-black text-white rounded-xl py-4 text-base font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm"
+                    >
                         Sign in <span className="text-lg">→</span>
                     </button>
+
 
                     {/* 🔗 New Terms and Policy Location under the Sign In Button */}
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', fontSize: '12px', color: '#9CA3AF' }}>
