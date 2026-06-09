@@ -79,8 +79,8 @@ export default function Restaurants({ setView }) {
             </aside>
 
             {/* 🍽️ MAIN EXPLORER WORKSPACE */}
-            <main className="flex-1 p-6 md:p-10 lg:p-12 overflow-y-auto max-w-[1200px] w-full space-y-6">
-
+            {/* NEW CODE */}
+            <main className="flex-1 p-6 md:p-10 lg:p-12 overflow-y-auto w-full max-w-[95%] xl:max-w-[90%] 2xl:max-w-[85%] mx-auto space-y-6">
                 {/* Top Title Row */}
                 <div className="flex items-center justify-between w-full">
                     <h1 className="text-2xl md:text-3xl font-sans text-gray-900 font-medium tracking-tight">
