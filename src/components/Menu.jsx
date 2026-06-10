@@ -12,18 +12,18 @@ export default function Menu({ setView }) {
     ];
 
     const weekendTrends = [
-        { name: "Gourmet burger", cat: "Main course", image: "/res1 (6).jpg" },
-        { name: "Hawaiian Pizza", cat: "Main course", image: "/res1 (7).jpg" },
-        { name: "Caesar salad", cat: "Sides", image: "/res1 (8).jpg" },
+        { name: "Gourmet burger", cat: "Main course", image: "/trend (4).jpg" },
+        { name: "Hawaiian Pizza", cat: "Main course", image: "/trend (3).jpg" },
+        { name: "Caesar salad", cat: "Sides", image: "/trend (2).jpg" },
         { name: "Tiramisu", cat: "Desert", image: "/meal (5).jpg" },
-        { name: "Pink lady", cat: "Drinks", image: "/res1 (4).jpg" },
+        { name: "Pink lady", cat: "Drinks", image: "/trend (1).jpg" },
     ];
 
     const sliderItems = [
-        { name: "Sushi platter", price: "45,000 RWF", rating: 5, reviews: "198 reviews", image: "/res1 (1).jpg" },
-        { name: "Coconut icecream", price: "7,000 RWF", rating: 4.5, reviews: "215 reviews", image: "/res1 (3).jpg" },
-        { name: "Mocha Coffee", price: "10,000 RWF", rating: 4, reviews: "101 reviews", image: "/res1 (5).jpg" },
-        { name: "Spicy ramen", price: "15,000 RWF", rating: 5, reviews: "320 reviews", image: "/res1 (7).jpg" },
+        { name: "Sushi platter", price: "45,000 RWF", rating: 5, reviews: "198 reviews", image: "/slider (5).jpg" },
+        { name: "Coconut icecream", price: "7,000 RWF", rating: 4.5, reviews: "215 reviews", image: "/slider (3).jpg" },
+        { name: "Mocha Coffee", price: "10,000 RWF", rating: 4, reviews: "101 reviews", image: "/slider (4).jpg" },
+        { name: "Spicy ramen", price: "15,000 RWF", rating: 5, reviews: "320 reviews", image: "/slider (1).jpg" },
     ];
 
     // Stark monochromatic star utility tracker
@@ -43,13 +43,13 @@ export default function Menu({ setView }) {
 
     return (
         <div className="w-full min-h-screen bg-[#FDFDFD] text-gray-900 flex font-sans antialiased text-left select-none">
-            
+
             {/* 🧭 SHARED SIDEBAR NAVIGATION */}
             <Sidebar currentView="menu" setView={setView} />
 
             {/* 🍽️ MAIN EXPLORER CANVAS */}
             <main className="flex-1 p-8 md:p-12 lg:p-16 overflow-y-auto max-w-[1500px] mx-auto w-full space-y-14">
-                
+
                 {/* 🔝 UPPER HEADER BLOCK */}
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-6 w-full border-b border-gray-200/80 pb-8">
                     <div className="space-y-3">
@@ -90,10 +90,10 @@ export default function Menu({ setView }) {
 
                 {/* 🛠️ TWO-COLUMN ASYMMETRIC HARMONIOUS SYSTEM */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch w-full">
-                    
+
                     {/* LEFT COLUMN: HERO DISH & SLIDER FEED (8 COLS) */}
                     <div className="col-span-1 lg:col-span-8 flex flex-col gap-10 justify-between">
-                        
+
                         {/* Stark Black High-Contrast Recommendation Canvas */}
                         <div className="w-full bg-black text-white rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden shadow-xl border border-black">
                             <div className="space-y-6 max-w-md z-10">
@@ -109,10 +109,10 @@ export default function Menu({ setView }) {
                                     Order Selection Now
                                 </button>
                             </div>
-                            
+
                             {/* Circular Image Container Frame */}
                             <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-gray-900 shadow-2xl flex-shrink-0 relative z-10">
-                                <img src="/step3.jpg" alt="Chef recommendation" className="w-full h-full object-cover" />
+                                <img src="/meal (6).jpg" alt="Chef recommendation" className="w-full h-full object-cover" />
                             </div>
                         </div>
 
@@ -153,7 +153,7 @@ export default function Menu({ setView }) {
                             <h4 className="text-xl font-serif font-medium text-black tracking-tight">This Weekend's Trend</h4>
                             <p className="text-sm text-gray-400 font-normal mt-0.5">Highly requested items by current diners</p>
                         </div>
-                        
+
                         <div className="flex flex-col gap-5 w-full flex-1 justify-center">
                             {weekendTrends.map((trend, idx) => (
                                 <div key={idx} className="flex items-center justify-between w-full border-b border-gray-50 pb-4 last:border-0 last:pb-0 group cursor-pointer py-0.5">
