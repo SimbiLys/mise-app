@@ -9,10 +9,14 @@ import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import Dashboard from './components/Dashboard';
 import Restaurant from './components/Restaurant';
-import Menu from './components/Menu'; // Cleanly imported Menu Page
+import Menu from './components/Menu';
+import Order from './components/Order'; // 🚀 Added missing import for the Order page
 
 export default function App() {
     const [view, setViewState] = useState('landing');
+
+    // 🍽️ Correctly moved selectedMeal state INSIDE the component definition
+    const [selectedMeal, setSelectedMeal] = useState(null);
 
     // Smooth state view transitions animation wrapper handler
     const setView = (nextView) => {
@@ -57,7 +61,13 @@ export default function App() {
             {view === 'restaurants' && <Restaurant setView={setView} />}
 
             {/* 📜 NEW MENU CATEGORIES ARC CANVAS LAYER */}
-            {view === 'menu' && <Menu setView={setView} />}
+            {/* Passed setSelectedMeal down so the menu can set the active meal before routing */}
+            {view === 'menu' && <Menu setView={setView} setSelectedMeal={setSelectedMeal} />}
+
+            {/* 💳 DETAILED RESERVATION ORDER LAYER */}
+            {view === 'order' && (
+                <Order selectedMeal={selectedMeal} setView={setView} />
+            )}
 
         </div>
     );
