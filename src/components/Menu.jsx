@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
-import Sidebar from './Sidebar'; // Shared sidebar
+
 
 export default function Menu({ setView }) {
     // 🗂️ 1. Categories Archetype mapped by unique string IDs
@@ -70,8 +70,6 @@ export default function Menu({ setView }) {
     return (
         <div className="w-full min-h-screen bg-[#FDFDFD] text-gray-900 flex font-sans antialiased text-left select-none">
 
-            {/* 🧭 SHARED SIDEBAR NAVIGATION */}
-            <Sidebar currentView="menu" setView={setView} />
 
             {/* 🍽️ MAIN EXPLORER CANVAS */}
             <main className="flex-1 p-8 md:p-12 lg:p-16 overflow-y-auto max-w-[1600px] mx-auto w-full space-y-16">
