@@ -7,15 +7,14 @@ import Contact from './components/Contact';
 import CtaSection from './components/CtaSection';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import Sidebar from './components/Sidebar'; // 🚀 Added missing Sidebar import
 import Dashboard from './components/Dashboard';
 import Restaurant from './components/Restaurant';
 import Menu from './components/Menu';
-import Order from './components/Order'; // 🚀 Added missing import for the Order page
+import Order from './components/Order';
 
 export default function App() {
     const [view, setViewState] = useState('landing');
-
-    // 🍽️ Correctly moved selectedMeal state INSIDE the component definition
     const [selectedMeal, setSelectedMeal] = useState(null);
 
     // Smooth state view transitions animation wrapper handler
@@ -55,18 +54,46 @@ export default function App() {
             {view === 'signup' && <SignUp setView={setView} />}
 
             {/* 🍽️ THE INNER APP DASHBOARD LAYER */}
-            {view === 'dashboard' && <Dashboard setView={setView} />}
+            {view === 'dashboard' && (
+                <div className="flex w-full min-h-screen bg-[#0F1115]">
+                    <Sidebar currentView={view} setView={setView} />
+                    <div className="flex-1 bg-[#FDFDFD] overflow-y-auto">
+                        <Dashboard setView={setView} />
+                    </div>
+                </div>
+            )}
 
             {/* 🗺️ RESTAURANTS PROFILE FLOW LAYER */}
-            {view === 'restaurants' && <Restaurant setView={setView} />}
+            {view === 'restaurants' && (
+                <div className="flex w-full min-h-screen bg-[#0F1115]">
+                    <Sidebar currentView={view} setView={setView} />
+                    <div className="flex-1 bg-[#FDFDFD] overflow-y-auto">
+                        <Restaurant setView={setView} />
+                    </div>
+                </div>
+            )}
 
             {/* 📜 NEW MENU CATEGORIES ARC CANVAS LAYER */}
-            {/* Passed setSelectedMeal down so the menu can set the active meal before routing */}
-            {view === 'menu' && <Menu setView={setView} setSelectedMeal={setSelectedMeal} />}
+            {view === 'menu' && (
+                <div className="flex w-full min-h-screen bg-[#0F1115]">
+                    <Sidebar currentView={view} setView={setView} />
+                    <div className="flex-1 bg-[#FDFDFD] overflow-y-auto">
+                        <Menu setView={setView} setSelectedMeal={setSelectedMeal} />
+                    </div>
+                </div>
+            )}
 
             {/* 💳 DETAILED RESERVATION ORDER LAYER */}
             {view === 'order' && (
-                <Order selectedMeal={selectedMeal} setView={setView} />
+                <div className="flex w-full min-h-screen bg-[#0F1115]">
+                    {/* Sidebar locked cleanly to the left */}
+                    <Sidebar currentView={view} setView={setView} />
+
+                    {/* Order form occupies the remaining space on the right */}
+                    <div className="flex-1 bg-[#FDFDFD] overflow-y-auto">
+                        <Order selectedMeal={selectedMeal} setView={setView} />
+                    </div>
+                </div>
             )}
 
         </div>
