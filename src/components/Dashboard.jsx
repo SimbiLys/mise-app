@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import Sidebar from './Sidebar'; // Shared sidebar
+
 
 export default function Dashboard({ setView }) {
     const summaryCards = [
@@ -27,8 +27,7 @@ export default function Dashboard({ setView }) {
     return (
         <div className="w-full min-h-screen bg-[#FDFDFD] text-gray-900 flex font-sans antialiased text-left select-none">
 
-            {/* 🧭 SHARED SIDEBAR NAVIGATION */}
-            <Sidebar currentView="dashboard" setView={setView} />
+       
 
             {/* 🍽️ MAIN EXPLORER CANVAS */}
             <main className="flex-1 p-8 md:p-12 lg:p-16 overflow-y-auto max-w-[1500px] mx-auto w-full space-y-14">
