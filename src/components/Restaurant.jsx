@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
-import Sidebar from './Sidebar'; // Import the shared sidebar
+
 
 export default function Restaurants({ setView }) {
     const restaurantList = [
@@ -32,14 +32,14 @@ export default function Restaurants({ setView }) {
         <div className="w-full min-h-screen bg-white text-gray-900 flex font-sans antialiased text-left select-none">
 
             {/* 🧭 INJECT REUSABLE UNIFIED SIDEBAR */}
-            <Sidebar currentView="restaurants" setView={setView} />
+      
 
             {/* 🍽️ EXPANSIVE FLUID MAIN EXPLORER WORKSPACE */}
             <main className="flex-1 p-6 md:p-10 lg:p-12 overflow-y-auto w-full max-w-[95%] xl:max-w-[90%] 2xl:max-w-[85%] mx-auto space-y-6">
 
                 {/* Top Title Row */}
                 <div className="flex items-center justify-between w-full">
-                    <h1 className="text-2xl md:text-3xl font-sans text-gray-900 font-medium tracking-tight">
+                    <h1 className="text-3xl md:text-3xl font-sans text-gray-900 font-medium tracking-tight">
                         Restaurants
                     </h1>
                     <div className="flex items-center gap-5">
@@ -53,14 +53,14 @@ export default function Restaurants({ setView }) {
                 {/* Expanded Search Input Bar */}
                 <div className="w-full max-w-md bg-[#EAEAEA] rounded-xl px-4 py-2 flex items-center gap-3">
                     <Icon icon="lucide:search" className="text-gray-500 w-4 h-4 flex-shrink-0" />
-                    <input type="text" placeholder="Search..." className="w-full text-sm bg-transparent text-gray-900 placeholder-gray-500 focus:outline-none" />
+                    <input type="text" placeholder="Search..." className="w-full text-base bg-transparent text-gray-900 placeholder-gray-500 focus:outline-none" />
                 </div>
 
                 {/* Filter Indicator Bar */}
                 <div className="w-full bg-[#BDBDBD] rounded-lg px-5 py-3.5 flex items-center justify-between gap-3 text-xs font-semibold text-gray-800">
                     <div className="flex flex-col">
-                        <span className="text-gray-900 font-bold text-sm">All restaurants</span>
-                        <span className="text-[11px] text-gray-600 font-normal mt-0.5">all registered restaurants</span>
+                        <span className="text-gray-900 font-bold text-lg">All restaurants</span>
+                        <span className="text-[15px] text-gray-600 font-normal mt-0.5">all registered restaurants</span>
                     </div>
                     <button className="flex items-center gap-2 bg-transparent text-gray-900 hover:text-black font-semibold text-sm">
                         Filter restaurants <Icon icon="lucide:sliders-horizontal" className="w-4 h-4" />
@@ -75,21 +75,21 @@ export default function Restaurants({ setView }) {
                             <div className="flex items-center gap-4 min-w-0">
                                 <img src={res.img} alt={res.name} className="w-12 h-12 rounded-lg object-cover bg-gray-100 flex-shrink-0" onError={(e) => { e.target.src = "https://placehold.co/100" }} />
                                 <div className="flex flex-col min-w-0">
-                                    <span className="text-[15px] font-bold text-gray-900 leading-tight truncate">{res.name}</span>
+                                    <span className="text-[20px] font-semibold text-gray-900 leading-tight truncate">{res.name}</span>
                                     <div className="flex items-center gap-0.5 mt-1">{renderStars(res.rating)}</div>
                                 </div>
                             </div>
 
                             {/* Column 2: Region and Street Address */}
                             <div className="flex flex-col min-w-0">
-                                <span className="text-[14px] font-medium text-gray-800 truncate">{res.location}</span>
-                                <span className="text-[11px] text-gray-400 font-normal mt-0.5 truncate">{res.street}</span>
+                                <span className="text-[19px] font-medium text-gray-800 truncate">{res.location}</span>
+                                <span className="text-[15px] text-gray-400 font-normal mt-0.5 truncate">{res.street}</span>
                             </div>
 
                             {/* Column 3: Actions Pinned Right */}
                             <div className="flex flex-col text-left sm:text-right sm:items-end flex-shrink-0">
                                 <button className="text-[14px] font-medium text-gray-900 hover:underline bg-transparent border-0 p-0 cursor-pointer w-fit">View full profile</button>
-                                <span className="text-[11px] text-gray-400 font-normal mt-0.5">view more details</span>
+                                <span className="text-[15px] text-gray-400 font-normal mt-0.5">view more details</span>
                             </div>
                         </div>
                     ))}
