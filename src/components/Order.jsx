@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 export default function Order({ selectedMeal, setView }) {
     // 🍽️ Rich fallback default meal data with an image
     const defaultMeal = {
-        name: "Sushi & Ramen Combo",
+        name: "Sushi & Ramen Combination",
         restaurant: "The Garden Bistro",
         price: "8,500 RWF",
         image: "/slider (1).jpg", // Using your slider image asset
