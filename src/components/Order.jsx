@@ -12,7 +12,7 @@ export default function Order({ selectedMeal, setView }) {
 
     const meal = selectedMeal || defaultMeal;
 
-    // States
+    // Reservation States
     const [reserveDate, setReserveDate] = useState('2026-06-12');
     const [reserveTime, setReserveTime] = useState('19:00');
     const [seatsCount, setSeatsCount] = useState('2');
@@ -21,111 +21,105 @@ export default function Order({ selectedMeal, setView }) {
     const [specialNotes, setSpecialNotes] = useState('');
 
     return (
-        <div className="w-full min-h-screen bg-[#FAFAFA] text-zinc-900 flex font-sans antialiased select-none">
-            <main className="flex-1 p-8 md:p-12 lg:p-16 overflow-y-auto max-w-[1600px] mx-auto w-full space-y-10">
+        <div className="w-full min-h-screen bg-[#FAFAFA] text-zinc-800 flex font-sans antialiased select-none">
+            <main className="flex-1 p-6 md:p-10 lg:p-12 overflow-y-auto max-w-[1400px] mx-auto w-full space-y-8">
 
-                {/* 🔝 BOLD DYNAMIC HEADER BLOCK */}
-                <div className="flex flex-col gap-2 w-full border-b-2 border-zinc-200 pb-6 text-left">
-                    <h1 className="text-4xl md:text-6xl font-serif font-black text-zinc-950 tracking-tight">
-                        Secure Your Dining Table
+                {/* 👑 SOPHISTICATED, REFINED HEADER */}
+                <div className="flex flex-col gap-1 w-full border-b border-zinc-200/60 pb-5 text-left">
+                    <h1 className="text-3xl md:text-4xl font-serif font-medium text-zinc-900 tracking-tight">
+                        Detailed Reservation Order
                     </h1>
-                    <p className="text-zinc-500 text-lg md:text-xl font-medium max-w-3xl">
-                        Review your premium selections, configure reservation parameters, and finalize tableside pre-orders.
+                    <p className="text-zinc-400 text-sm md:text-base font-normal">
+                        Review your dining selections, specify table preferences, and finalize your pre-ordered items.
                     </p>
                 </div>
 
-                {/* 💳 PREMIUM HERO GRID STAGE */}
-                <div className="w-full bg-white border-2 border-zinc-950 rounded-[32px] p-8 lg:p-12 shadow-[8px_8px_0px_0px_rgba(9,9,11,1)] grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch relative overflow-hidden">
+                {/* 💳 CLEAN, ULTRA-PREMIUM MAIN STAGE CARD */}
+                <div className="w-full bg-white border border-zinc-200/80 rounded-2xl p-6 lg:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
-                    {/* LEFT COLUMN: VISUAL CULINARY SHOWCASE (5 COLS) */}
-                    <div className="lg:col-span-5 flex flex-col justify-between space-y-8 lg:border-r-2 lg:border-zinc-100 lg:pr-10 text-left">
-                        <div className="space-y-6">
-                            {/* Cinematic Large Image Showcase */}
-                            <div className="w-full h-80 rounded-2xl overflow-hidden border-2 border-zinc-950 shadow-md relative group">
-                                <img src={meal.image} alt={meal.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                <span className="absolute top-4 left-4 text-xs font-black uppercase tracking-widest bg-amber-500 text-black px-4 py-2 rounded-lg shadow-sm border border-zinc-950">
-                                    ★ Selected Masterpiece
+                    {/* LEFT COLUMN: VISUAL TEXTURE & DESCRIPTION (5 COLS) */}
+                    <div className="lg:col-span-5 flex flex-col justify-between space-y-6 lg:border-r lg:border-zinc-100 lg:pr-8 text-left">
+                        <div className="space-y-5">
+                            {/* Sleek Cinematic Image */}
+                            <div className="w-full h-56 rounded-xl overflow-hidden border border-zinc-100 shadow-sm relative">
+                                <img src={meal.image} alt={meal.name} className="w-full h-full object-cover" />
+                                <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-widest bg-zinc-900/90 text-white px-2.5 py-1 rounded-md backdrop-blur-sm">
+                                    Pre-Order Active
                                 </span>
                             </div>
 
-                            <div className="space-y-3">
-                                <h2 className="text-4xl md:text-5xl font-serif font-black tracking-tight text-zinc-950 leading-tight">
+                            <div className="space-y-1.5">
+                                <h2 className="text-2xl md:text-3xl font-serif font-bold tracking-tight text-zinc-900">
                                     {meal.name}
                                 </h2>
-                                <span className="inline-flex items-center gap-2 text-xl text-amber-600 font-extrabold bg-amber-50 px-3 py-1 rounded-md border border-amber-200/60">
-                                    <Icon icon="lucide:utensils" className="w-5 h-5" />
+                                <div className="inline-flex items-center gap-1.5 text-sm text-amber-700 font-semibold bg-amber-50/60 px-2.5 py-0.5 rounded-md border border-amber-100">
+                                    <Icon icon="lucide:utensils-crosses" className="w-3.5 h-3.5" />
                                     {meal.restaurant}
-                                </span>
+                                </div>
                             </div>
 
-                            <div className="space-y-2 pt-2 border-t border-zinc-100">
-                                <span className="text-xs font-black tracking-widest text-zinc-400 uppercase block">
+                            <div className="space-y-1 pt-3 border-t border-zinc-100">
+                                <span className="text-[11px] font-bold tracking-widest text-zinc-400 uppercase block">
                                     Culinary Profile Description
                                 </span>
-                                <p className="text-lg text-zinc-700 leading-relaxed font-medium">
+                                <p className="text-sm md:text-base text-zinc-500 leading-relaxed font-normal">
                                     {meal.desc}
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    {/* RIGHT COLUMN: ACTION METRICS PANEL (7 COLS) */}
-                    <div className="lg:col-span-7 flex flex-col justify-between space-y-10 lg:pl-4 text-left">
+                    {/* RIGHT COLUMN: REFINED INPUT CONTROLS & SPATIAL NODE (7 COLS) */}
+                    <div className="lg:col-span-7 flex flex-col justify-between space-y-8 lg:pl-4 text-left">
 
-                        <div className="space-y-8">
-                            <div className="flex items-center gap-2 border-b border-zinc-100 pb-2">
-                                <Icon icon="lucide:sliders" className="text-zinc-950 w-6 h-6" />
-                                <span className="text-sm font-black tracking-widest text-zinc-950 uppercase block">
-                                    Reservation Metrics Setup
-                                </span>
-                            </div>
+                        <div className="space-y-6">
+                            <span className="text-[11px] font-bold tracking-widest text-zinc-400 uppercase block">
+                                Reservation Settings
+                            </span>
 
-                            {/* Main Parameter Inputs Row */}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                {/* Date Box */}
-                                <div className="bg-zinc-50 border-2 border-zinc-200 rounded-2xl px-5 py-4 flex items-center gap-4 transition-all focus-within:border-zinc-950 focus-within:bg-white shadow-sm">
-                                    <Icon icon="lucide:calendar" className="text-zinc-400 w-6 h-6 flex-shrink-0" />
+                            {/* Inputs Row with Crisp, Fine Borders */}
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                {/* Date Input */}
+                                <div className="bg-zinc-50/50 border border-zinc-200 rounded-xl px-4 py-2.5 flex items-center gap-3 transition-all focus-within:border-zinc-400 focus-within:bg-white">
+                                    <Icon icon="lucide:calendar" className="text-zinc-400 w-4 h-4 flex-shrink-0" />
                                     <div className="flex flex-col w-full">
-                                        <span className="text-[10px] font-black uppercase tracking-wider text-zinc-400">Date</span>
+                                        <span className="text-[9px] font-bold uppercase tracking-wider text-zinc-400">Date</span>
                                         <input
                                             type="date"
                                             value={reserveDate}
                                             onChange={(e) => setReserveDate(e.target.value)}
-                                            className="w-full text-base bg-transparent text-zinc-950 font-black focus:outline-none pt-0.5"
+                                            className="w-full text-sm bg-transparent text-zinc-800 font-semibold focus:outline-none"
                                         />
                                     </div>
                                 </div>
 
-                                {/* Time Box */}
-                                <div className="bg-zinc-50 border-2 border-zinc-200 rounded-2xl px-5 py-4 flex items-center gap-4 transition-all focus-within:border-zinc-950 focus-within:bg-white shadow-sm relative">
-                                    <Icon icon="lucide:clock" className="text-zinc-400 w-6 h-6 flex-shrink-0" />
+                                {/* Time Input */}
+                                <div className="bg-zinc-50/50 border border-zinc-200 rounded-xl px-4 py-2.5 flex items-center gap-3 transition-all focus-within:border-zinc-400 focus-within:bg-white">
+                                    <Icon icon="lucide:clock" className="text-zinc-400 w-4 h-4 flex-shrink-0" />
                                     <div className="flex flex-col w-full">
-                                        <span className="text-[10px] font-black uppercase tracking-wider text-zinc-400">Arrival Time</span>
+                                        <span className="text-[9px] font-bold uppercase tracking-wider text-zinc-400">Arrival Time</span>
                                         <select
                                             value={reserveTime}
                                             onChange={(e) => setReserveTime(e.target.value)}
-                                            className="w-full text-base bg-transparent text-zinc-950 font-black focus:outline-none appearance-none cursor-pointer pt-0.5"
+                                            className="w-full text-sm bg-transparent text-zinc-800 font-semibold focus:outline-none appearance-none cursor-pointer"
                                         >
-                                            <option value="12:00">12:00 PM</option>
-                                            <option value="14:00">2:00 PM</option>
-                                            <option value="17:00">5:00 PM</option>
                                             <option value="19:00">7:00 PM</option>
+                                            <option value="20:00">8:00 PM</option>
                                             <option value="21:00">9:00 PM</option>
                                         </select>
                                     </div>
                                 </div>
 
-                                {/* Seats Box */}
-                                <div className="bg-zinc-50 border-2 border-zinc-200 rounded-2xl px-5 py-4 flex items-center gap-4 transition-all focus-within:border-zinc-950 focus-within:bg-white shadow-sm">
-                                    <Icon icon="lucide:users" className="text-zinc-400 w-6 h-6 flex-shrink-0" />
+                                {/* Party Size Input */}
+                                <div className="bg-zinc-50/50 border border-zinc-200 rounded-xl px-4 py-2.5 flex items-center gap-3 transition-all focus-within:border-zinc-400 focus-within:bg-white">
+                                    <Icon icon="lucide:users" className="text-zinc-400 w-4 h-4 flex-shrink-0" />
                                     <div className="flex flex-col w-full">
-                                        <span className="text-[10px] font-black uppercase tracking-wider text-zinc-400">Party Size</span>
+                                        <span className="text-[9px] font-bold uppercase tracking-wider text-zinc-400">Party Size</span>
                                         <select
                                             value={seatsCount}
                                             onChange={(e) => setSeatsCount(e.target.value)}
-                                            className="w-full text-base bg-transparent text-zinc-950 font-black focus:outline-none appearance-none cursor-pointer pt-0.5"
+                                            className="w-full text-sm bg-transparent text-zinc-800 font-semibold focus:outline-none appearance-none cursor-pointer"
                                         >
-                                            <option value="1">1 Guest</option>
                                             <option value="2">2 Guests</option>
                                             <option value="4">4 Guests</option>
                                             <option value="6">6 Guests</option>
@@ -134,81 +128,81 @@ export default function Order({ selectedMeal, setView }) {
                                 </div>
                             </div>
 
-                            {/* Tailored Preferences Group */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div className="space-y-2">
-                                    <span className="text-xs font-black tracking-widest text-zinc-950 uppercase block pl-1">Dietary Exclusions</span>
+                            {/* Elegant Preferences Block */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-1">
+                                    <span className="text-[10px] font-bold tracking-widest text-zinc-400 uppercase block pl-0.5">Dietary Requests</span>
                                     <input
                                         type="text"
-                                        placeholder="Allergies, Vegan, Nut-free restrictions..."
+                                        placeholder="Allergies, restrictions..."
                                         value={dietary}
                                         onChange={(e) => setDietary(e.target.value)}
-                                        className="w-full bg-zinc-50 border-2 border-zinc-200 rounded-2xl px-5 py-4 text-base text-zinc-950 font-semibold focus:outline-none focus:border-zinc-950 focus:bg-white transition-all shadow-sm placeholder-zinc-400"
+                                        className="w-full bg-zinc-50/50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm text-zinc-800 font-normal focus:outline-none focus:border-zinc-400 focus:bg-white transition-all placeholder-zinc-300"
                                     />
                                 </div>
-                                <div className="space-y-2">
-                                    <span className="text-xs font-black tracking-widest text-zinc-950 uppercase block pl-1">Special Table Placement</span>
+                                <div className="space-y-1">
+                                    <span className="text-[10px] font-bold tracking-widest text-zinc-400 uppercase block pl-0.5">Special Seating</span>
                                     <input
                                         type="text"
-                                        placeholder="Window seat, quiet corner, event setup..."
+                                        placeholder="Window seat, quiet table..."
                                         value={specialNotes}
                                         onChange={(e) => setSpecialNotes(e.target.value)}
-                                        className="w-full bg-zinc-50 border-2 border-zinc-200 rounded-2xl px-5 py-4 text-base text-zinc-950 font-semibold focus:outline-none focus:border-zinc-950 focus:bg-white transition-all shadow-sm placeholder-zinc-400"
+                                        className="w-full bg-zinc-50/50 border border-zinc-200 rounded-xl px-4 py-2.5 text-sm text-zinc-800 font-normal focus:outline-none focus:border-zinc-400 focus:bg-white transition-all placeholder-zinc-300"
                                     />
                                 </div>
                             </div>
 
-                            {/* Map Proximity Tracking Component */}
-                            <div className="space-y-3 pt-2">
-                                <span className="text-xs font-black tracking-widest text-zinc-400 uppercase block">
-                                    Spatial Verification Map
+                            {/* Minimalist Map Tracking Frame */}
+                            <div className="space-y-2.5 pt-1">
+                                <span className="text-[11px] font-bold tracking-widest text-zinc-400 uppercase block">
+                                    Location Mapping
                                 </span>
-                                <div className="w-full h-44 bg-zinc-50 border-2 border-zinc-200 rounded-[24px] relative overflow-hidden shadow-inner">
-                                    <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:20px_20px]"></div>
-                                    <div className="absolute inset-0 flex items-center justify-center p-8">
-                                        <div className="flex items-center justify-between w-full relative max-w-lg">
-                                            <div className="w-14 h-14 rounded-2xl bg-zinc-950 text-white flex items-center justify-center shadow-lg z-10 border border-zinc-800">
-                                                <Icon icon="lucide:user" className="w-6 h-6" />
+                                <div className="w-full h-24 bg-zinc-50/80 border border-zinc-200 rounded-xl relative overflow-hidden">
+                                    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:14px_16px]"></div>
+                                    <div className="absolute inset-0 flex items-center justify-center px-12">
+                                        <div className="flex items-center justify-between w-full relative max-w-md">
+                                            <div className="w-8 h-8 rounded-lg bg-zinc-900 text-white flex items-center justify-center shadow-sm z-10">
+                                                <Icon icon="lucide:user" className="w-4 h-4" />
                                             </div>
-                                            <div className="absolute left-6 right-6 h-1 border-dashed border-t-4 border-zinc-300"></div>
-                                            <div className="w-14 h-14 rounded-2xl bg-amber-500 text-black flex items-center justify-center shadow-lg z-10 border-2 border-zinc-950 animate-bounce">
-                                                <Icon icon="lucide:map-pin" className="w-6 h-6" />
+                                            <div className="absolute left-4 right-4 h-[1px] border-dashed border-t border-zinc-300"></div>
+                                            <div className="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-700 flex items-center justify-center shadow-sm z-10 border border-amber-300/40">
+                                                <Icon icon="lucide:map-pin" className="w-4 h-4" />
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                {/* Proximity Indicators */}
-                                <div className="flex flex-col sm:flex-row sm:items-center justify-between bg-zinc-950 text-white px-6 py-4 rounded-2xl border-2 border-zinc-950 shadow-md gap-4">
-                                    <div className="flex items-center gap-3 text-base font-bold">
-                                        <Icon icon="lucide:navigation" className="w-6 h-6 text-amber-400 animate-pulse" />
-                                        <span>Proximity Indicator: <b className="text-amber-400 text-lg font-black tracking-wide">1.2 KM Away</b></span>
+                                {/* Proximity Status Sub-Bar */}
+                                <div className="flex items-center justify-between bg-zinc-50 border border-zinc-200/80 px-4 py-2.5 rounded-xl text-sm font-medium">
+                                    <div className="flex items-center gap-2 text-zinc-600">
+                                        <Icon icon="lucide:navigation" className="w-4 h-4 text-zinc-400" />
+                                        <span>Restaurant Proximity: <b className="text-zinc-900">1.2 KM</b></span>
                                     </div>
-                                    <label className="flex items-center gap-3 cursor-pointer text-base font-black tracking-wide select-none bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-xl">
+                                    <label className="flex items-center gap-2 cursor-pointer text-zinc-700 select-none">
                                         <input
                                             type="checkbox"
                                             checked={includePreOrder}
                                             onChange={(e) => setIncludePreOrder(e.target.checked)}
-                                            className="rounded accent-amber-500 cursor-pointer w-5 h-5 border-zinc-700"
+                                            className="rounded border-zinc-300 accent-zinc-900 cursor-pointer w-4 h-4"
                                         />
-                                        Active Pre-order
+                                        <span>Pre-order Attached</span>
                                     </label>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Financial Processing Base Checkout Section */}
-                        <div className="border-t-2 border-zinc-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-6 w-full">
-                            <div className="flex flex-col text-center sm:text-left space-y-1">
-                                <span className="text-xs font-black text-zinc-400 uppercase tracking-widest">
-                                    Total Combined Price
+                        {/* Luxury-Tier Action Checkout Footer */}
+                        <div className="border-t border-zinc-100 pt-5 flex flex-col sm:flex-row items-center justify-between gap-4 w-full">
+                            <div className="flex flex-col text-center sm:text-left">
+                                <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">
+                                    Estimated Summary
                                 </span>
-                                <span className="text-4xl font-serif font-black text-zinc-950 tracking-tight">
+                                <span className="text-2xl font-serif font-bold text-zinc-900">
                                     {meal.price}
                                 </span>
                             </div>
-                            <button className="bg-zinc-950 hover:bg-zinc-900 hover:scale-[1.02] active:scale-[0.98] text-white font-black text-lg tracking-wide rounded-2xl px-10 py-5 transition-all shadow-[4px_4px_0px_0px_rgba(245,158,11,1)] flex items-center justify-center gap-3 cursor-pointer w-full sm:w-auto">
-                                <Icon icon="lucide:calendar-check" className="w-6 h-6 text-amber-400" />
+                            <button className="bg-zinc-900 hover:bg-zinc-800 text-white font-semibold text-sm tracking-wide rounded-xl px-6 py-3.5 transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto">
+                                <Icon icon="lucide:calendar-check" className="w-4 h-4 text-amber-400" />
                                 Confirm Reservation & Order
                             </button>
                         </div>
@@ -217,35 +211,36 @@ export default function Order({ selectedMeal, setView }) {
 
                 </div>
 
-                {/* 📜 HISTORICAL RECORDS */}
-                <div className="space-y-5 pt-4 text-left">
-                    <h3 className="text-2xl md:text-3xl font-serif font-black tracking-tight text-zinc-950">
-                        Past Verification History
+                {/* 📜 MINIMALIST ARCHIVES */}
+                <div className="space-y-3 pt-2 text-left">
+                    <h3 className="text-xl font-serif font-bold text-zinc-900">
+                        Reservation History
                     </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="p-6 bg-white border-2 border-zinc-200 rounded-2xl flex items-center justify-between gap-4 shadow-sm">
-                            <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 rounded-xl bg-zinc-50 flex items-center justify-center border-2 border-zinc-100">
-                                    <Icon icon="lucide:calendar-days" className="w-7 h-7 text-zinc-800" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div className="p-4 bg-white border border-zinc-200/80 rounded-xl flex items-center justify-between gap-3 shadow-sm">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded-lg bg-zinc-50 flex items-center justify-center border border-zinc-100">
+                                    <Icon icon="lucide:calendar-days" className="w-5 h-5 text-zinc-500" />
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-lg font-black text-zinc-950">Table Booking Verified</span>
-                                    <span className="text-sm text-zinc-400 font-bold font-mono">09/23 — 2 Seats</span>
+                                    <span className="text-sm font-semibold text-zinc-800">Table Booking Verified</span>
+                                    <span className="text-xs text-zinc-400 font-medium font-mono">09/23 — 2 Seats</span>
                                 </div>
                             </div>
-                            <Icon icon="lucide:check-circle-2" className="w-7 h-7 text-emerald-500" />
+                            <Icon icon="lucide:check-circle-2" className="w-5 h-5 text-emerald-500" />
                         </div>
-                        <div className="p-6 bg-white border-2 border-zinc-200 rounded-2xl flex items-center justify-between gap-4 shadow-sm">
-                            <div className="flex items-center gap-4">
-                                <div className="w-14 h-14 rounded-xl bg-zinc-50 flex items-center justify-center border-2 border-zinc-100">
-                                    <Icon icon="lucide:utensils" className="w-7 h-7 text-zinc-800" />
+                        <div className="p-4 bg-white border border-zinc-200/80 rounded-xl flex items-center justify-between gap-3 shadow-sm">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded-lg bg-zinc-50 flex items-center justify-center border border-zinc-100">
+                                    <Icon icon="lucide:utensils-crosses" className="w-5 h-5 text-zinc-500" />
                                 </div>
                                 <div className="flex flex-col">
-                                    <span className="text-lg font-black text-zinc-950">Pre-order Mix Confirmed</span>
-                                    <span className="text-sm text-zinc-400 font-bold font-mono">Sushi Platter Standard</span>
+                                    <Icon icon="lucide:cooking-pot" className="w-5 h-5 text-zinc-600" />
+                                    <span className="text-sm font-semibold text-zinc-800">Pre-order Mix Confirmed</span>
+                                    <span className="text-xs text-zinc-400 font-medium font-mono">Sushi Platter Standard</span>
                                 </div>
                             </div>
-                            <Icon icon="lucide:check-circle-2" className="w-7 h-7 text-emerald-500" />
+                            <Icon icon="lucide:check-circle-2" className="w-5 h-5 text-emerald-500" />
                         </div>
                     </div>
                 </div>
