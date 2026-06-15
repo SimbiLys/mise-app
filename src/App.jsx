@@ -7,11 +7,13 @@ import Contact from './components/Contact';
 import CtaSection from './components/CtaSection';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-import Sidebar from './components/Sidebar'; // 🚀 Added missing Sidebar import
+import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import Restaurant from './components/Restaurant';
 import Menu from './components/Menu';
 import Order from './components/Order';
+// 1. 🚀 ADD THIS PROFILE IMPORT RIGHT HERE:
+import Profile from './components/Profile';
 
 export default function App() {
     const [view, setViewState] = useState('landing');
@@ -37,7 +39,7 @@ export default function App() {
                     <Navbar setView={setView} />
                     <main>
                         <Hero />
-                        <Features />
+                        <features />
                         <Contact />
                         <CtaSection setView={setView} />
                     </main>
@@ -86,12 +88,19 @@ export default function App() {
             {/* 💳 DETAILED RESERVATION ORDER LAYER */}
             {view === 'order' && (
                 <div className="flex w-full min-h-screen bg-[#0F1115]">
-                    {/* Sidebar locked cleanly to the left */}
                     <Sidebar currentView={view} setView={setView} />
-
-                    {/* Order form occupies the remaining space on the right */}
                     <div className="flex-1 bg-[#FDFDFD] overflow-y-auto">
                         <Order selectedMeal={selectedMeal} setView={setView} />
+                    </div>
+                </div>
+            )}
+
+            {/* 👤 2. 🚀 ADD THIS NEW PROFILE WORKSPACE LAYER RIGHT HERE: */}
+            {view === 'profile' && (
+                <div className="flex w-full min-h-screen bg-[#0F1115]">
+                    <Sidebar currentView={view} setView={setView} />
+                    <div className="flex-1 bg-[#FDFDFD] overflow-y-auto">
+                        <Profile />
                     </div>
                 </div>
             )}
