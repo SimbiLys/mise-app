@@ -59,17 +59,10 @@ export default function Navbar({ setView }) {
                     </a>
                 </div>
 
-                {/* 3. Action Utility Panel */}
+                {/* 3. Action Utility Panel (Icons Removed) */}
                 <div className="flex items-center gap-5 md:gap-6">
-                    <div className="hidden sm:flex items-center gap-4 text-zinc-400">
-                        <button className="hover:text-white transition-colors cursor-pointer"><Icon icon="lucide:search" className="w-4.5 h-4.5" /></button>
-                        <button className="hover:text-white transition-colors cursor-pointer"><Icon icon="lucide:heart" className="w-4.5 h-4.5" /></button>
-                        <button onClick={() => setView('signin')} className="hover:text-white transition-colors cursor-pointer">
-                            <Icon icon="lucide:user" className="w-4.5 h-4.5" />
-                        </button>
-                    </div>
 
-                    {/* Dark/Segment Toggle Control */}
+                    {/* The segment switch button remains untouched */}
                     <div className="flex items-center gap-0.5 bg-zinc-900 rounded-full p-0.5 border border-white/10 text-[11px] uppercase tracking-wider font-bold relative overflow-hidden">
                         <button
                             onClick={() => { setViewMode('restaurants'); setView('signup'); }}
