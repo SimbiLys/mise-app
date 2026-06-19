@@ -20,8 +20,8 @@ export default function Navbar({ setView }) {
                     <span className="text-xl font-serif tracking-[0.25em] uppercase font-bold text-white">Mise</span>
                 </a>
 
-                {/* 2. Navigation Links */}
-                <div className="hidden md:flex items-center gap-10 text-xs uppercase tracking-[0.2em] font-bold">
+                {/* 2. Navigation Links (Font Size Increased to text-sm) */}
+                <div className="hidden md:flex items-center gap-10 text-sm uppercase tracking-[0.2em] font-bold">
                     <a
                         href="#home"
                         onClick={() => { setActiveSection('home'); setView('landing'); }}
@@ -59,27 +59,27 @@ export default function Navbar({ setView }) {
                     </a>
                 </div>
 
-                {/* 3. Action Utility Panel (Icons Removed) */}
+                {/* 3. Action Utility Panel */}
                 <div className="flex items-center gap-5 md:gap-6">
 
-                    {/* The segment switch button remains untouched */}
-                    <div className="flex items-center gap-0.5 bg-zinc-900 rounded-full p-0.5 border border-white/10 text-[11px] uppercase tracking-wider font-bold relative overflow-hidden">
+                    {/* Segment Toggle Selector Button (Padding and font size increased) */}
+                    <div className="flex items-center gap-0.5 bg-zinc-900 rounded-full p-0.5 border border-white/10 text-xs uppercase tracking-wider font-bold relative overflow-hidden">
                         <button
                             onClick={() => { setViewMode('restaurants'); setView('signup'); }}
-                            className={`px-3 py-2 rounded-full transition-all duration-300 relative z-10 cursor-pointer ${viewMode === 'restaurants' ? 'bg-white text-zinc-950 shadow-sm' : 'text-zinc-400 hover:text-white'}`}
+                            className={`px-4 py-2.5 rounded-full transition-all duration-300 relative z-10 cursor-pointer ${viewMode === 'restaurants' ? 'bg-white text-zinc-950 shadow-sm' : 'text-zinc-400 hover:text-white'}`}
                         >
                             For restaurants
                         </button>
 
                         <button
                             onClick={() => { setViewMode('diners'); setView('signin'); }}
-                            className={`px-3 py-2 rounded-full transition-all duration-300 relative z-10 cursor-pointer ${viewMode === 'diners' ? 'bg-white text-zinc-950 shadow-sm' : 'text-zinc-400 hover:text-white'}`}
+                            className={`px-4 py-2.5 rounded-full transition-all duration-300 relative z-10 cursor-pointer ${viewMode === 'diners' ? 'bg-white text-zinc-950 shadow-sm' : 'text-zinc-400 hover:text-white'}`}
                         >
                             For diners
                         </button>
                     </div>
 
-                    {/* Mobile Menu */}
+                    {/* Mobile Menu Open Trigger */}
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         className="flex md:hidden text-zinc-300 hover:text-white transition-colors p-1 z-50"
@@ -91,7 +91,7 @@ export default function Navbar({ setView }) {
 
             {/* Mobile Navigation Drawer */}
             <div className={`fixed inset-x-0 top-0 bg-zinc-950/95 backdrop-blur-lg border-b border-white/10 z-40 md:hidden transition-all duration-300 ease-in-out transform origin-top ${isMobileMenuOpen ? 'opacity-100 scale-y-100' : 'opacity-0 scale-y-100 pointer-events-none'}`}>
-                <div className="flex flex-col p-6 gap-5 text-sm uppercase tracking-widest font-bold pt-24 text-left">
+                <div className="flex flex-col p-6 gap-5 text-base uppercase tracking-widest font-bold pt-24 text-left">
                     <a href="#home" onClick={() => { setActiveSection('home'); setView('landing'); setIsMobileMenuOpen(false); }} className={`text-left py-2 border-l-2 pl-2 ${activeSection === 'home' ? 'border-white text-white' : 'border-transparent text-zinc-400'}`}>Home</a>
                     <a href="#how-it-works" onClick={() => { setActiveSection('how-it-works'); setView('landing'); setIsMobileMenuOpen(false); }} className={`text-left py-2 border-l-2 pl-2 ${activeSection === 'how-it-works' ? 'border-white text-white' : 'border-transparent text-zinc-400'}`}>How it works</a>
                     <a href="#curation" onClick={() => { setActiveSection('curation'); setView('landing'); setIsMobileMenuOpen(false); }} className={`text-left py-2 border-l-2 pl-2 ${activeSection === 'curation' ? 'border-white text-white' : 'border-transparent text-zinc-400'}`}>Features</a>
