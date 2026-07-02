@@ -22,11 +22,15 @@ export default function Hero() {
                 </span>
 
                 <h1 className="text-6xl sm:text-7xl md:text-8xl font-serif tracking-tight text-white leading-[1.08] max-w-5xl font-medium antialiased drop-shadow-sm">
-                    Your table is set <br />
+                    Your table is set.<br />
                     <span className="font-normal italic text-zinc-300">Your dish is ready.</span>
                 </h1>
 
-                <p className="text-zinc-200 text-lg sm:text-xl md:text-2xl tracking-normal leading-relaxed font-light max-w-4xl text-center antialiased max-w-3xl">
+                {/* Changed layout rules here:
+                  - Swapped out max-w-3xl for max-w-5xl to let the sentence extend into a longer line.
+                  - Cleaned up the duplicate class syntax anomaly at the end of the line.
+                */}
+                <p className="text-zinc-200 text-lg sm:text-xl md:text-2xl tracking-normal leading-relaxed font-light text-center antialiased max-w-5xl">
                     Discover restaurants you'll love, reserve your table, and pre-order your meal before you even arrive. No more waiting on a packed Friday night, your first course lands the moment you sit down.
                 </p>
             </div>
